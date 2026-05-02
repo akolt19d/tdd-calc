@@ -96,4 +96,41 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         assertEquals(3.75, calculator.multiply(2.5, 1.5), 0.0001);
     }
+
+    // DIVIDE
+    @Test
+    void dividesTwoPositiveNumbers() {
+        Calculator calculator = new Calculator();
+        assertEquals(2.0, calculator.divide(4.0, 2.0));
+    }
+
+    @Test
+    void dividesTwoNegativeNumbers() {
+        Calculator calculator = new Calculator();
+        assertEquals(2.0, calculator.divide(-4.0, -2.0));
+    }
+
+    @Test
+    void dividesPositiveAndNegative() {
+        Calculator calculator = new Calculator();
+        assertEquals(-2.0, calculator.divide(4.0, -2.0));
+    }
+
+    @Test
+    void dividesDecimals() {
+        Calculator calculator = new Calculator();
+        assertEquals(1.5, calculator.divide(7.5, 5.0), 0.0001);
+    }
+
+    @Test
+    void canDivideZero() {
+        Calculator calculator = new Calculator();
+        assertEquals(0.0, calculator.divide(0.0, 10.0));
+    }
+
+    @Test
+    void cannotDivideByZero() {
+        Calculator calculator = new Calculator();
+        assertThrows(IllegalArgumentException.class, () -> calculator.divide(10.0, 0.0));
+    }
 }
