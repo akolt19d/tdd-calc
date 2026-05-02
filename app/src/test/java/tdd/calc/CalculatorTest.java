@@ -65,4 +65,35 @@ class CalculatorTest {
         Calculator calculator = new Calculator();
         assertEquals(6.7, calculator.subtract(9.9, 3.2), 0.0001);
     }
+
+    // MULTIPLY
+    @Test
+    void multipliesTwoPositiveNumbers() {
+        Calculator calculator = new Calculator();
+        assertEquals(8.0, calculator.multiply(2.0, 4.0));
+    }
+
+    @Test
+    void multipliesTwoNegativeNumbers() {
+        Calculator calculator = new Calculator();
+        assertEquals(6.0, calculator.multiply(-2.0, -3.0));
+    }
+
+    @Test
+    void multipliesPositiveAndNegative() {
+        Calculator calculator = new Calculator();
+        assertEquals(-6.0, calculator.multiply(2.0, -3.0));
+    }
+
+    @Test
+    void multipliesByZero() {
+        Calculator calculator = new Calculator();
+        assertEquals(0.0, calculator.multiply(5.0, 0.0));
+    }
+
+    @Test
+    void multipliesDecimals() {
+        Calculator calculator = new Calculator();
+        assertEquals(3.75, calculator.multiply(2.5, 1.5), 0.0001);
+    }
 }
